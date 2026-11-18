@@ -1,4 +1,4 @@
-# Prüfbericht Tischwechsel – Version 03
+# Prüfbericht Tischwechsel – Version 04
 
 Stand: 18. November 2026. Dieser Bericht betrifft die Dateien dieser ZIP, nicht den danach veröffentlichten Stand. Kein vollständiges Browser-, W3C- oder Lighthouse-Prüfsiegel.
 
@@ -28,3 +28,6 @@ Stand: 18. November 2026. Dieser Bericht betrifft die Dateien dieser ZIP, nicht 
 ## Redaktionelle Entscheidungen
 
 Die Anfahrt nennt den Oberhafen als Konzeptort, verspricht aber keinen real existierenden Eingang. Wetter- und Barrierefreiheitsangaben bleiben transparent, statt ungeprüfte Zusicherungen zu erfinden. Die Story beschreibt Aufgabenbereiche eines erfundenen Teams. Preise, Gruppengröße, freie Platzwahl und fehlende Rechnungsstellung sind konsistent erklärt. Die Bildunterschriften beschreiben vorhandene Standbilder; Filmdateien werden nicht mehr angekündigt und sind keine Pflichtanforderung.
+
+## Parallax-Korrektur 04
+Live-Ursache im Browser bestätigt: Die Ebenen wurden verschoben, während die gesamte Szene bereits aus dem Viewport lief. Neu: sticky Hero-Szene mit eigenem Scrollweg und größeren Tiefenabständen, ohne Unschärfe. Scrollfortschritt anhand der Differenz aus Abschnitts- und Szenenhöhe. Isolierte Tests für Anfang/Mitte/Ende und Ende-Begrenzung sowie Rückbau bei reduzierter Bewegung bestanden. Die vorherigen Formularprüfungen bestehen weiterhin. Neue GitHub-Pages-Adresse in den Metadaten berücksichtigt; CSS/JS-Cachekennung v=4. Visuelle Kontrolle dieser Korrektur bleibt offen: sites-preview meldet „preview relay unavailable“. Die Live-Diagnose ist keine Bestätigung des neuen Standes.

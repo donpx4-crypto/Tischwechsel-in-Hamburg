@@ -18,12 +18,18 @@ if (header && menuButton) {
   });
 }
 const hero = document.querySelector('.hero');
+const scene = document.querySelector('.hero-scene');
+function configureParallax() {
+  if (hero && scene) hero.classList.toggle('parallax-enabled', !motion.matches);
+}
+configureParallax();
 let pendingFrame = false;
 function updateParallax() {
   pendingFrame = false;
-  if (!hero) return;
+  if (!hero || !scene) return;
   const bounds = hero.getBoundingClientRect();
-  const progress = motion.matches ? 0 : Math.min(1, Math.max(0, -bounds.top / bounds.height));
+  const travel = Math.max(1, bounds.height - scene.offsetHeight);
+  const progress = motion.matches ? 0 : Math.min(1, Math.max(0, -bounds.top / travel));
   document.documentElement.style.setProperty('--progress', progress.toFixed(3));
 }
 function requestParallax() {
@@ -53,6 +59,7 @@ if ('IntersectionObserver' in window && !motion.matches) {
   });
 }
 motion.addEventListener('change', () => {
+  configureParallax();
   if (motion.matches) revealElements.forEach(element => element.classList.remove('reveal-pending'));
   updateParallax();
 });
